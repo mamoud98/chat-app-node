@@ -1,4 +1,8 @@
-var listUsers = [];
+var listUsers = [
+  { id: 5, room: "java", username: "mahmoud" },
+  { id: 6, room: "php", username: "Ali" },
+];
+// var listUsers = [];
 
 function getUsersRoom(room) {
   return listUsers.filter((a) => a.room == room);
@@ -22,13 +26,13 @@ function getUserNameById(id) {
 function changeId(username, id) {
   for (const user of listUsers) {
     if (user.username == username) {
-         user.id = id;
+      user.id = id;
     }
   }
 }
 
 function removeUser(id) {
-  listUsers = listUsers.filter(u=> u.id != id);
+  listUsers = listUsers.filter((u) => u.id != id);
 }
 
 module.exports = {
@@ -38,5 +42,5 @@ module.exports = {
   changeId,
   removeUser,
   getUserRoomById,
-  getUsersById
+  getUsersById,
 };
